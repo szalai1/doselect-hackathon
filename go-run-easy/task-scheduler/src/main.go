@@ -72,9 +72,9 @@ func main() {
 		fmt.Scanf("%d %d", &(list[i].Id), &(list[i].Prior))
 	}
 	sort.Sort(ById(list))
-	sort.Sort(ByPrior(list))
+	sort.Stable(ByPrior(list))
 	for _, v := range list {
-		fmt.Printf("%d %d\n", v.Id, v.Prior)
+		fmt.Printf("%d", v.Id)
 	}
 
 }
