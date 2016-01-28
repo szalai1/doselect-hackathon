@@ -26,11 +26,11 @@ func maxPos(nums []int) (int, int) {
 	v, p := 0, 0
 	for i, val := range nums {
 		if i == 0 {
-			v, p = i, val
+			v, p = val, i
 			continue
 		}
 		if v < val {
-			v, p = i, val
+			v, p = val, i
 		}
 	}
 	return v, p
@@ -52,10 +52,6 @@ func maxStreach(nums []int) int {
 	revCumSum := reverse(cumsum(rnums))
 	v1, p1 := maxPos(cumSum)
 	v2, p2 := maxPos(revCumSum)
-	fmt.Println(cumSum)
-	fmt.Println(revCumSum)
-	fmt.Println(v1, p1)
-	fmt.Println(v2, p2)
 	if p1 >= p2 {
 		return v1 + v2 - cumSum[len(cumSum)-1]
 	} else {
