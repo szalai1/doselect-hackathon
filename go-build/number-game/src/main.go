@@ -46,5 +46,4 @@ func readData() ([]int, int) {
 func main() {
 	data, t := readData()
 	fmt.Println(numberOfCombinations(data, t))
-
 }
